@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
 import data
 from helpers import retrieve_phone_code
 import time
@@ -106,9 +105,9 @@ class UrbanRoutesPage:
     def click_add_cartao(self, cartao, code):
         self.driver.find_element(*self.add_metodo_pagamento).click()
         self.driver.find_element(*self.add_card).click()
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(*self.number_card).send_keys(cartao)
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(*self.code_card).send_keys(code)
         time.sleep(1)
         self.driver.find_element(*self.add_finish_card).click()

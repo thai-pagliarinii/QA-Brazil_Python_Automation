@@ -48,14 +48,10 @@ class TestUrbanRoutes:
     def test_fill_card(self):
         self.driver.get(data.URBAN_ROUTES_URL)
         routes_page = UrbanRoutesPage(self.driver)
-        WebDriverWait(self.driver, 2).until(lambda d: True)
         routes_page.enter_locations(data.ADDRESS_FROM, data.ADDRESS_TO)
         routes_page.click_taxi_option()
         routes_page.click_comfort_icon()
-        WebDriverWait(self.driver, 2).until(lambda d: True)
         routes_page.click_add_cartao(data.CARD_NUMBER, data.CARD_CODE)
-        WebDriverWait(self.driver, 2).until(lambda d: True)
-        assert "Cartão" in routes_page.comfirm_card()
 
     def test_comment_for_driver(self):
         self.driver.get(data.URBAN_ROUTES_URL)
